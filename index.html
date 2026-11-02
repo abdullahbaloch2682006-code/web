@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vincenzo is a book app to discover, read and share great books." />
+  <title>Vincenzo | Home</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-2 focus:rounded focus:bg-white focus:px-3 focus:py-2">Skip to main content</a>
+
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-stone-200">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
+      <a href="index.html" class="flex items-center gap-2 text-xl font-bold text-amber-700" aria-label="Vincenzo home">
+        <img src="assets/favicon.svg" alt="" width="32" height="32" class="h-8 w-8" /> Vincenzo
+      </a>
+      <nav aria-label="Main navigation" class="hidden md:block">
+        <ul class="flex items-center gap-5 lg:gap-8 text-sm font-medium">
+          <li><a href="index.html" aria-current="page" class="text-amber-700">Home</a></li>
+          <li><a href="src/pages/about.html" class="hover:text-amber-700">About</a></li>
+          <li><a href="src/pages/library.html" class="hover:text-amber-700">Library</a></li>
+          <li><a href="src/pages/discover.html" class="hover:text-amber-700">Discover</a></li>
+          <li><a href="src/pages/contact.html" class="hover:text-amber-700">Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Account" class="hidden md:block">
+        <ul class="flex items-center gap-3 text-sm font-medium">
+          <li><a href="src/pages/signin.html" class="px-4 py-2 rounded-lg hover:bg-stone-100">Sign In</a></li>
+          <li><a href="src/pages/signup.html" class="px-4 py-2 rounded-lg bg-amber-700 text-white hover:bg-amber-800">Sign Up</a></li>
+        </ul>
+      </nav>
+      <button id="menu-btn" type="button" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden p-2 rounded-lg hover:bg-stone-100">
+        <span class="sr-only">Toggle menu</span>
+        <svg class="h-6 w-6" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" aria-label="Mobile navigation" class="hidden md:hidden border-t border-stone-200 bg-white px-4 py-3 text-sm font-medium">
+      <ul class="space-y-1">
+        <li><a href="index.html" aria-current="page" class="block px-3 py-2 rounded-lg bg-amber-50 text-amber-800">Home</a></li>
+        <li><a href="src/pages/about.html" class="block px-3 py-2 rounded-lg hover:bg-stone-100">About</a></li>
+        <li><a href="src/pages/library.html" class="block px-3 py-2 rounded-lg hover:bg-stone-100">Library</a></li>
+        <li><a href="src/pages/discover.html" class="block px-3 py-2 rounded-lg hover:bg-stone-100">Discover</a></li>
+        <li><a href="src/pages/contact.html" class="block px-3 py-2 rounded-lg hover:bg-stone-100">Contact</a></li>
+        <li><a href="src/pages/signin.html" class="block px-3 py-2 rounded-lg hover:bg-stone-100">Sign In</a></li>
+        <li><a href="src/pages/signup.html" class="block px-3 py-2 rounded-lg hover:bg-stone-100">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section aria-labelledby="hero-title" class="bg-gradient-to-br from-stone-900 via-stone-800 to-amber-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="inline-block mb-4 px-3 py-1 text-xs font-semibold bg-white/15 rounded-full">📚 New: Free reading lists for members</p>
+          <h1 id="hero-title" class="text-4xl sm:text-5xl font-extrabold leading-tight">Find your next favourite book with Vincenzo</h1>
+          <p class="mt-5 text-lg text-stone-200">Discover bestsellers and hidden gems, build reading lists, and join a community of readers who love stories.</p>
+          <p class="mt-8 flex flex-wrap gap-4">
+            <a href="src/pages/signup.html" class="px-6 py-3 font-semibold text-amber-900 bg-white rounded-lg shadow hover:bg-amber-50">Start Reading Free</a>
+            <a href="src/pages/about.html" class="px-6 py-3 font-semibold border border-white/60 rounded-lg hover:bg-white/10">About Vincenzo</a>
+          </p>
+        </div>
+        <aside aria-label="Quote of the day" class="hidden lg:block">
+          <figure class="rounded-2xl bg-white/10 p-8 border border-white/20 backdrop-blur">
+            <blockquote>
+              <p class="text-xl italic">A reader lives a thousand lives before he dies.</p>
+            </blockquote>
+            <figcaption class="mt-4 text-sm text-amber-200">A thought for readers</figcaption>
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section aria-labelledby="stats-title" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-10">
+      <h2 id="stats-title" class="sr-only">Vincenzo in numbers</h2>
+      <dl class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white rounded-2xl shadow-lg p-6 text-center">
+        <div><dd class="text-3xl font-bold text-amber-700">50K+</dd><dt class="text-sm text-stone-500">Books</dt></div>
+        <div><dd class="text-3xl font-bold text-amber-700">12K+</dd><dt class="text-sm text-stone-500">Readers</dt></div>
+        <div><dd class="text-3xl font-bold text-amber-700">800+</dd><dt class="text-sm text-stone-500">Authors</dt></div>
+        <div><dd class="text-3xl font-bold text-amber-700">24/7</dd><dt class="text-sm text-stone-500">Online access</dt></div>
+      </dl>
+    </section>
+
+    <section aria-labelledby="featured-title" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <header class="text-center max-w-2xl mx-auto">
+        <h2 id="featured-title" class="text-3xl font-bold">Featured books</h2>
+        <p class="mt-3 text-stone-600">Hand-picked titles our readers love this month.</p>
+      </header>
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-white rounded-xl border border-stone-200 overflow-hidden hover:shadow-lg transition">
+          <figure>
+            <div class="h-48 bg-gradient-to-br from-rose-700 to-rose-900 flex items-center justify-center p-4 text-center">
+              <span class="text-white text-xl font-bold leading-tight">Pride and Prejudice</span>
+            </div>
+            <figcaption class="sr-only">Cover of Pride and Prejudice</figcaption>
+          </figure>
+          <div class="p-5">
+            <p class="inline-block px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 rounded-full">Classic</p>
+            <h3 class="mt-2 text-lg font-semibold">Pride and Prejudice</h3>
+            <p class="text-sm text-stone-500">by <span>Jane Austen</span></p>
+            <p class="mt-3 flex items-center justify-between">
+              <data value="9.99" class="font-bold text-amber-700">$9.99</data>
+              <a href="src/pages/signup.html" class="text-sm font-medium px-3 py-1.5 rounded-lg border border-amber-700 text-amber-700 hover:bg-amber-50">Add to list</a>
+            </p>
+          </div>
+        </article>
+        <article class="bg-white rounded-xl border border-stone-200 overflow-hidden hover:shadow-lg transition">
+          <figure>
+            <div class="h-48 bg-gradient-to-br from-slate-600 to-slate-900 flex items-center justify-center p-4 text-center">
+              <span class="text-white text-xl font-bold leading-tight">1984</span>
+            </div>
+            <figcaption class="sr-only">Cover of 1984</figcaption>
+          </figure>
+          <div class="p-5">
+            <p class="inline-block px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 rounded-full">Dystopian</p>
+            <h3 class="mt-2 text-lg font-semibold">1984</h3>
+            <p class="text-sm text-stone-500">by <span>George Orwell</span></p>
+            <p class="mt-3 flex items-center justify-between">
+              <data value="8.99" class="font-bold text-amber-700">$8.99</data>
+              <a href="src/pages/signup.html" class="text-sm font-medium px-3 py-1.5 rounded-lg border border-amber-700 text-amber-700 hover:bg-amber-50">Add to list</a>
+            </p>
+          </div>
+        </article>
+        <article class="bg-white rounded-xl border border-stone-200 overflow-hidden hover:shadow-lg transition">
+          <figure>
+            <div class="h-48 bg-gradient-to-br from-amber-600 to-orange-800 flex items-center justify-center p-4 text-center">
+              <span class="text-white text-xl font-bold leading-tight">The Alchemist</span>
+            </div>
+            <figcaption class="sr-only">Cover of The Alchemist</figcaption>
+          </figure>
+          <div class="p-5">
+            <p class="inline-block px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 rounded-full">Fiction</p>
+            <h3 class="mt-2 text-lg font-semibold">The Alchemist</h3>
+            <p class="text-sm text-stone-500">by <span>Paulo Coelho</span></p>
+            <p class="mt-3 flex items-center justify-between">
+              <data value="10.49" class="font-bold text-amber-700">$10.49</data>
+              <a href="src/pages/signup.html" class="text-sm font-medium px-3 py-1.5 rounded-lg border border-amber-700 text-amber-700 hover:bg-amber-50">Add to list</a>
+            </p>
+          </div>
+        </article>
+        <article class="bg-white rounded-xl border border-stone-200 overflow-hidden hover:shadow-lg transition">
+          <figure>
+            <div class="h-48 bg-gradient-to-br from-emerald-700 to-emerald-900 flex items-center justify-center p-4 text-center">
+              <span class="text-white text-xl font-bold leading-tight">Sapiens</span>
+            </div>
+            <figcaption class="sr-only">Cover of Sapiens</figcaption>
+          </figure>
+          <div class="p-5">
+            <p class="inline-block px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 rounded-full">History</p>
+            <h3 class="mt-2 text-lg font-semibold">Sapiens</h3>
+            <p class="text-sm text-stone-500">by <span>Yuval Noah Harari</span></p>
+            <p class="mt-3 flex items-center justify-between">
+              <data value="14.99" class="font-bold text-amber-700">$14.99</data>
+              <a href="src/pages/signup.html" class="text-sm font-medium px-3 py-1.5 rounded-lg border border-amber-700 text-amber-700 hover:bg-amber-50">Add to list</a>
+            </p>
+          </div>
+        </article>
+        <article class="bg-white rounded-xl border border-stone-200 overflow-hidden hover:shadow-lg transition">
+          <figure>
+            <div class="h-48 bg-gradient-to-br from-sky-700 to-indigo-900 flex items-center justify-center p-4 text-center">
+              <span class="text-white text-xl font-bold leading-tight">Atomic Habits</span>
+            </div>
+            <figcaption class="sr-only">Cover of Atomic Habits</figcaption>
+          </figure>
+          <div class="p-5">
+            <p class="inline-block px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 rounded-full">Self-help</p>
+            <h3 class="mt-2 text-lg font-semibold">Atomic Habits</h3>
+            <p class="text-sm text-stone-500">by <span>James Clear</span></p>
+            <p class="mt-3 flex items-center justify-between">
+              <data value="13.49" class="font-bold text-amber-700">$13.49</data>
+              <a href="src/pages/signup.html" class="text-sm font-medium px-3 py-1.5 rounded-lg border border-amber-700 text-amber-700 hover:bg-amber-50">Add to list</a>
+            </p>
+          </div>
+        </article>
+        <article class="bg-white rounded-xl border border-stone-200 overflow-hidden hover:shadow-lg transition">
+          <figure>
+            <div class="h-48 bg-gradient-to-br from-teal-700 to-teal-900 flex items-center justify-center p-4 text-center">
+              <span class="text-white text-xl font-bold leading-tight">The Great Gatsby</span>
+            </div>
+            <figcaption class="sr-only">Cover of The Great Gatsby</figcaption>
+          </figure>
+          <div class="p-5">
+            <p class="inline-block px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 rounded-full">Classic</p>
+            <h3 class="mt-2 text-lg font-semibold">The Great Gatsby</h3>
+            <p class="text-sm text-stone-500">by <span>F. Scott Fitzgerald</span></p>
+            <p class="mt-3 flex items-center justify-between">
+              <data value="7.99" class="font-bold text-amber-700">$7.99</data>
+              <a href="src/pages/signup.html" class="text-sm font-medium px-3 py-1.5 rounded-lg border border-amber-700 text-amber-700 hover:bg-amber-50">Add to list</a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="genres-title" class="bg-white py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="genres-title" class="text-3xl font-bold text-center">Browse by genre</h2>
+        <ul class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"><li class="p-5 bg-white rounded-xl border border-stone-200 text-center hover:border-amber-600 transition"><span class="text-3xl" aria-hidden="true">📖</span><h3 class="mt-2 font-semibold">Fiction</h3><p class="text-xs text-stone-500">1,200 titles</p></li><li class="p-5 bg-white rounded-xl border border-stone-200 text-center hover:border-amber-600 transition"><span class="text-3xl" aria-hidden="true">🕵️</span><h3 class="mt-2 font-semibold">Mystery</h3><p class="text-xs text-stone-500">640 titles</p></li><li class="p-5 bg-white rounded-xl border border-stone-200 text-center hover:border-amber-600 transition"><span class="text-3xl" aria-hidden="true">🚀</span><h3 class="mt-2 font-semibold">Sci-Fi</h3><p class="text-xs text-stone-500">520 titles</p></li><li class="p-5 bg-white rounded-xl border border-stone-200 text-center hover:border-amber-600 transition"><span class="text-3xl" aria-hidden="true">🏛️</span><h3 class="mt-2 font-semibold">History</h3><p class="text-xs text-stone-500">430 titles</p></li><li class="p-5 bg-white rounded-xl border border-stone-200 text-center hover:border-amber-600 transition"><span class="text-3xl" aria-hidden="true">💡</span><h3 class="mt-2 font-semibold">Self-help</h3><p class="text-xs text-stone-500">380 titles</p></li><li class="p-5 bg-white rounded-xl border border-stone-200 text-center hover:border-amber-600 transition"><span class="text-3xl" aria-hidden="true">🧒</span><h3 class="mt-2 font-semibold">Children</h3><p class="text-xs text-stone-500">750 titles</p></li></ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="plans-title" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <h2 id="plans-title" class="text-3xl font-bold text-center">Membership plans</h2>
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <article class="p-8 rounded-2xl border border-stone-200 bg-white">
+          <h3 class="font-semibold">Reader</h3>
+          <p class="mt-3 text-4xl font-extrabold">$0<small class="text-base font-normal text-stone-500">/mo</small></p>
+          <ul class="mt-6 space-y-2 text-sm text-stone-600"><li>✔ 3 reading lists</li><li>✔ Free book previews</li></ul>
+          <a href="src/pages/signup.html" class="mt-8 block text-center py-2 rounded-lg border border-amber-700 text-amber-700 font-medium hover:bg-amber-50">Choose Reader</a>
+        </article>
+        <article class="p-8 rounded-2xl bg-amber-700 text-white shadow-xl md:scale-105">
+          <h3 class="font-semibold">Bookworm <mark class="ml-2 text-xs bg-white/20 text-white px-2 py-0.5 rounded-full">Popular</mark></h3>
+          <p class="mt-3 text-4xl font-extrabold">$8<small class="text-base font-normal text-amber-100">/mo</small></p>
+          <ul class="mt-6 space-y-2 text-sm text-amber-50"><li>✔ Unlimited reading lists</li><li>✔ 5 free e-books monthly</li></ul>
+          <a href="src/pages/signup.html" class="mt-8 block text-center py-2 rounded-lg bg-white text-amber-800 font-medium hover:bg-amber-50">Choose Bookworm</a>
+        </article>
+        <article class="p-8 rounded-2xl border border-stone-200 bg-white">
+          <h3 class="font-semibold">Scholar</h3>
+          <p class="mt-3 text-4xl font-extrabold">$15<small class="text-base font-normal text-stone-500">/mo</small></p>
+          <ul class="mt-6 space-y-2 text-sm text-stone-600"><li>✔ Unlimited e-books</li><li>✔ Early access to new releases</li></ul>
+          <a href="src/pages/signup.html" class="mt-8 block text-center py-2 rounded-lg border border-amber-700 text-amber-700 font-medium hover:bg-amber-50">Choose Scholar</a>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="reviews-title" class="bg-white py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="reviews-title" class="text-3xl font-bold text-center">What readers say</h2>
+        <div class="mt-12 grid md:grid-cols-2 gap-6">
+          <figure class="p-6 bg-stone-50 rounded-xl border border-stone-200">
+            <blockquote><p>“Vincenzo helped me finally build a reading habit. The lists are simple and the recommendations are spot on.”</p></blockquote>
+            <figcaption class="mt-4 text-sm"><cite class="font-semibold not-italic">Ayesha K.</cite> <span class="text-stone-500">· Literature Student</span></figcaption>
+          </figure>
+          <figure class="p-6 bg-stone-50 rounded-xl border border-stone-200">
+            <blockquote><p>“I found three new favourite authors in my first week. It feels like a cosy local bookshop, online.”</p></blockquote>
+            <figcaption class="mt-4 text-sm"><cite class="font-semibold not-italic">Bilal R.</cite> <span class="text-stone-500">· Book Club Host</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="newsletter-title" class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <h2 id="newsletter-title" class="text-3xl font-bold">Get weekly book picks</h2>
+      <p class="mt-3 text-stone-600">One short email every Friday. No spam.</p>
+      <form id="newsletter-form" class="mt-6 flex flex-col sm:flex-row gap-3" novalidate>
+        <label for="news-email" class="sr-only">Email address</label>
+        <input type="email" id="news-email" name="email" required placeholder="you@example.com" class="flex-1 w-full rounded-lg border border-stone-300 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-amber-600" />
+        <button type="submit" class="px-6 py-2.5 font-semibold rounded-lg bg-amber-700 text-white hover:bg-amber-800">Subscribe</button>
+      </form>
+      <p id="newsletter-alert" role="status" class="hidden"></p>
+    </section>
+
+
+    <section aria-labelledby="faq-title" class="bg-white py-20">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="faq-title" class="text-3xl font-bold text-center">Frequently asked questions</h2>
+        <div class="mt-10 divide-y divide-stone-200 border border-stone-200 rounded-xl">
+          <details class="group p-5">
+            <summary class="cursor-pointer list-none flex justify-between items-center font-medium">Is Vincenzo free to use?<span aria-hidden="true" class="transition-transform group-open:rotate-180">&#8964;</span></summary>
+            <p class="mt-3 text-sm text-stone-600">Yes. The Reader plan is free and lets you build reading lists and preview books.</p>
+          </details>
+          <details class="group p-5">
+            <summary class="cursor-pointer list-none flex justify-between items-center font-medium">Can I read on my phone?<span aria-hidden="true" class="transition-transform group-open:rotate-180">&#8964;</span></summary>
+            <p class="mt-3 text-sm text-stone-600">Absolutely. Vincenzo is fully responsive and works on phones, tablets and computers.</p>
+          </details>
+          <details class="group p-5">
+            <summary class="cursor-pointer list-none flex justify-between items-center font-medium">How do I suggest a book?<span aria-hidden="true" class="transition-transform group-open:rotate-180">&#8964;</span></summary>
+            <p class="mt-3 text-sm text-stone-600">Send us a note through the Contact page and our editors will review it.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+
+    <section aria-labelledby="cta-title" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="rounded-2xl bg-stone-900 text-white p-10 text-center">
+        <h2 id="cta-title" class="text-3xl font-bold">Ready to start your next chapter?</h2>
+        <p class="mt-3 text-stone-300">Join thousands of readers on Vincenzo today.</p>
+        <a href="src/pages/signup.html" class="mt-6 inline-block px-6 py-3 font-semibold rounded-lg bg-amber-600 hover:bg-amber-500">Create your free account</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-stone-900 text-stone-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+      <section aria-labelledby="f-brand">
+        <h2 id="f-brand" class="flex items-center gap-2 text-lg font-bold text-white"><img src="assets/favicon.svg" alt="" width="28" height="28" class="h-7 w-7" /> Vincenzo</h2>
+        <p class="mt-3 text-stone-400">Books for curious minds. Discover, read and share stories that stay with you.</p>
+      </section>
+      <nav aria-labelledby="f-pages">
+        <h2 id="f-pages" class="font-semibold text-white">Pages</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="index.html" class="hover:text-white">Home</a></li>
+          <li><a href="src/pages/about.html" class="hover:text-white">About</a></li>
+          <li><a href="src/pages/library.html" class="hover:text-white">Library</a></li>
+          <li><a href="src/pages/discover.html" class="hover:text-white">Discover</a></li>
+          <li><a href="src/pages/contact.html" class="hover:text-white">Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="f-account">
+        <h2 id="f-account" class="font-semibold text-white">Account</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="src/pages/signin.html" class="hover:text-white">Sign In</a></li>
+          <li><a href="src/pages/signup.html" class="hover:text-white">Sign Up</a></li>
+        </ul>
+      </nav>
+      <section aria-labelledby="f-contact">
+        <h2 id="f-contact" class="font-semibold text-white">Visit us</h2>
+        <address class="mt-3 not-italic text-stone-400">
+          Ghayas Abdullah<br />
+          Lahore, Pakistan<br />
+          <a href="tel:+923114817113" class="hover:text-white">0311 4817113</a><br />
+          <a href="mailto:abdullahbaluch2682006@gmail.com" class="hover:text-white">abdullahbaluch2682006@gmail.com</a>
+        </address>
+      </section>
+    </div>
+    <div class="border-t border-stone-800 py-4 text-center text-xs text-stone-500">
+      <small>&copy; <span id="year">2026</span> Vincenzo Books by Ghayas Abdullah. All rights reserved.</small>
+    </div>
+  </footer>
+</body>
+</html>

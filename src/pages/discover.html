@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Search millions of books live from the free Open Library API using axios." />
+  <title>Vincenzo | Discover Books</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="../../assets/js/main.js"></script>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-2 focus:rounded focus:bg-white focus:px-3 focus:py-2">Skip to main content</a>
+
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-stone-200">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
+      <a href="../../index.html" class="flex items-center gap-2 text-xl font-bold text-amber-700" aria-label="Vincenzo home">
+        <img src="../../assets/favicon.svg" alt="" width="32" height="32" class="h-8 w-8" /> Vincenzo
+      </a>
+      <nav aria-label="Main navigation" class="hidden md:block">
+        <ul class="flex items-center gap-5 lg:gap-8 text-sm font-medium">
+          <li><a href="../../index.html" class="hover:text-amber-700">Home</a></li>
+          <li><a href="about.html" class="hover:text-amber-700">About</a></li>
+          <li><a href="library.html" class="hover:text-amber-700">Library</a></li>
+          <li><a href="discover.html" aria-current="page" class="text-amber-700">Discover</a></li>
+          <li><a href="contact.html" class="hover:text-amber-700">Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Account" class="hidden md:block">
+        <ul class="flex items-center gap-3 text-sm font-medium">
+          <li><a href="signin.html" class="px-4 py-2 rounded-lg hover:bg-stone-100">Sign In</a></li>
+          <li><a href="signup.html" class="px-4 py-2 rounded-lg bg-amber-700 text-white hover:bg-amber-800">Sign Up</a></li>
+        </ul>
+      </nav>
+      <button id="menu-btn" type="button" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden p-2 rounded-lg hover:bg-stone-100">
+        <span class="sr-only">Toggle menu</span>
+        <svg class="h-6 w-6" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" aria-label="Mobile navigation" class="hidden md:hidden border-t border-stone-200 bg-white px-4 py-3 text-sm font-medium">
+      <ul class="space-y-1">
+        <li><a href="../../index.html" class="block px-3 py-2 rounded-lg hover:bg-stone-100">Home</a></li>
+        <li><a href="about.html" class="block px-3 py-2 rounded-lg hover:bg-stone-100">About</a></li>
+        <li><a href="library.html" class="block px-3 py-2 rounded-lg hover:bg-stone-100">Library</a></li>
+        <li><a href="discover.html" aria-current="page" class="block px-3 py-2 rounded-lg bg-amber-50 text-amber-800">Discover</a></li>
+        <li><a href="contact.html" class="block px-3 py-2 rounded-lg hover:bg-stone-100">Contact</a></li>
+        <li><a href="signin.html" class="block px-3 py-2 rounded-lg hover:bg-stone-100">Sign In</a></li>
+        <li><a href="signup.html" class="block px-3 py-2 rounded-lg hover:bg-stone-100">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section aria-labelledby="page-title" class="bg-gradient-to-br from-stone-900 via-stone-800 to-amber-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+        <nav aria-label="Breadcrumb" class="text-sm text-amber-200">
+          <ol class="flex justify-center gap-2">
+            <li><a href="../../index.html" class="hover:text-white">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" class="text-white">Discover</li>
+          </ol>
+        </nav>
+        <h1 id="page-title" class="mt-4 text-4xl sm:text-5xl font-extrabold">Discover Books</h1>
+        <p class="mt-4 max-w-2xl mx-auto text-lg text-stone-200">Search millions of books live from the free Open Library JSON API, fetched with axios.get().</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="search-title" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 id="search-title" class="text-2xl font-bold">Search the Open Library</h2>
+      <form id="search-form" role="search" class="mt-5 flex flex-col sm:flex-row gap-3">
+        <label for="q" class="sr-only">Search books</label>
+        <input type="search" id="q" name="q" placeholder="Title, author or topic" class="flex-1 w-full rounded-lg border border-stone-300 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-amber-600" />
+        <button type="submit" class="px-8 py-2.5 font-semibold rounded-lg bg-amber-700 text-white hover:bg-amber-800">Search</button>
+      </form>
+      <ul class="mt-4 flex flex-wrap gap-2" aria-label="Popular searches"><li><button type="button" data-query="fantasy" class="px-4 py-1.5 text-sm font-medium rounded-full border border-stone-300 bg-white hover:border-amber-600 hover:text-amber-700">fantasy</button></li><li><button type="button" data-query="poetry" class="px-4 py-1.5 text-sm font-medium rounded-full border border-stone-300 bg-white hover:border-amber-600 hover:text-amber-700">poetry</button></li><li><button type="button" data-query="history of rome" class="px-4 py-1.5 text-sm font-medium rounded-full border border-stone-300 bg-white hover:border-amber-600 hover:text-amber-700">history of rome</button></li><li><button type="button" data-query="python programming" class="px-4 py-1.5 text-sm font-medium rounded-full border border-stone-300 bg-white hover:border-amber-600 hover:text-amber-700">python programming</button></li><li><button type="button" data-query="mystery" class="px-4 py-1.5 text-sm font-medium rounded-full border border-stone-300 bg-white hover:border-amber-600 hover:text-amber-700">mystery</button></li></ul>
+
+      <p id="status" role="status" aria-live="polite" class="hidden"></p>
+      <div id="results" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </section>
+
+    <aside aria-labelledby="how-title" class="bg-white py-16">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="how-title" class="text-2xl font-bold">How it works</h2>
+        <p class="mt-3 text-stone-600">When you search, the page sends a GET request to the free
+          <a href="https://openlibrary.org/developers/api" target="_blank" rel="noopener" class="text-amber-700 underline">Open Library API</a>
+          using axios, then shows the returned JSON as book cards. Use <q>Add to my library</q> to save a result to the Library page.</p>
+        <figure class="mt-6">
+          <pre class="overflow-x-auto rounded-lg bg-stone-900 p-4 text-sm text-amber-100"><code>const response = await axios.get('https://openlibrary.org/search.json', {
+  params: { q: query, limit: 12 }
+});
+const docs = response.data.docs;</code></pre>
+          <figcaption class="mt-2 text-xs text-stone-500">The axios.get request used in assets/js/discover.js</figcaption>
+        </figure>
+      </div>
+    </aside>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.7.7/dist/axios.min.js"></script>
+  <script defer src="../../assets/js/storage.js"></script>
+  <script defer src="../../assets/js/discover.js"></script>
+
+  <footer class="bg-stone-900 text-stone-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+      <section aria-labelledby="f-brand">
+        <h2 id="f-brand" class="flex items-center gap-2 text-lg font-bold text-white"><img src="../../assets/favicon.svg" alt="" width="28" height="28" class="h-7 w-7" /> Vincenzo</h2>
+        <p class="mt-3 text-stone-400">Books for curious minds. Discover, read and share stories that stay with you.</p>
+      </section>
+      <nav aria-labelledby="f-pages">
+        <h2 id="f-pages" class="font-semibold text-white">Pages</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="../../index.html" class="hover:text-white">Home</a></li>
+          <li><a href="about.html" class="hover:text-white">About</a></li>
+          <li><a href="library.html" class="hover:text-white">Library</a></li>
+          <li><a href="discover.html" class="hover:text-white">Discover</a></li>
+          <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="f-account">
+        <h2 id="f-account" class="font-semibold text-white">Account</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="signin.html" class="hover:text-white">Sign In</a></li>
+          <li><a href="signup.html" class="hover:text-white">Sign Up</a></li>
+        </ul>
+      </nav>
+      <section aria-labelledby="f-contact">
+        <h2 id="f-contact" class="font-semibold text-white">Visit us</h2>
+        <address class="mt-3 not-italic text-stone-400">
+          Ghayas Abdullah<br />
+          Lahore, Pakistan<br />
+          <a href="tel:+923114817113" class="hover:text-white">0311 4817113</a><br />
+          <a href="mailto:abdullahbaluch2682006@gmail.com" class="hover:text-white">abdullahbaluch2682006@gmail.com</a>
+        </address>
+      </section>
+    </div>
+    <div class="border-t border-stone-800 py-4 text-center text-xs text-stone-500">
+      <small>&copy; <span id="year">2026</span> Vincenzo Books by Ghayas Abdullah. All rights reserved.</small>
+    </div>
+  </footer>
+</body>
+</html>
